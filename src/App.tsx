@@ -1,25 +1,64 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Login from './components/Login';
+import LoadingScreen from './components/LoadingScreen';
+import { extendTheme, ChakraProvider, VStack } from '@chakra-ui/react'
+import Cadastro from './components/Cadastro';
+import DrawerMenu from './components/Drawer';
+import Pedidos from './components/Pedidos';
+import Pedido from './components/Pedido';
+import Home from './components/Home'
+import { useEffect, useState } from 'react';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  BrowserRouter,
+  Routes
+} from "react-router-dom";
+import { setTimeout } from 'timers';
+
+
 
 function App() {
+
+  const [loading, setLoading] = useState(true)
+
+
+  useEffect(() => {
+    setInterval(() => {
+      setLoading(false)
+    }, 2000);
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      
+      <VStack width="full" align={"center"} justify={"center"}>
+      
+        {
+          !!loading? (
+
+              <LoadingScreen/>
+             
+          ) : (
+            <>
+            <DrawerMenu/>
+            <BrowserRouter>
+            <Routes>
+              <Route path='/' element={<Login/>}/>
+              <Route path='cadastro' element={<Cadastro/>}/>
+              <Route path='pedidos' element={<Pedidos/>}/>
+              <Route path='conta' element={<Home/>}/>
+              <Route path='pedidos/pedido/12345' element={<Pedido/>}/>
+            </Routes>
+            </BrowserRouter>
+            </>
+          )
+        }
+        
+        </VStack>
+        
+    </ChakraProvider>
   );
 }
 
