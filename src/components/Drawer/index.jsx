@@ -48,25 +48,25 @@ export default function DrawerMenu() {
   
             <DrawerBody>
             <VStack height={"full"} align="flex-start" marginTop={"16"} spacing="16">
-              <Link to="conta">
+              
                 <VStack width="full">
                   <Button colorScheme='red' size='lg' width={"full"}>
-                    <HStack align="center" justify="center"><FontAwesomeIcon icon={faHome} fontSize="16px"/> <Text>Minha Conta</Text></HStack>
+                    <HStack align="center" justify="center"><FontAwesomeIcon icon={faHome} fontSize="16px"/> <Link to="conta"><Text>Minha Conta</Text></Link></HStack>
                    
                   </Button>
                 </VStack>
-                </Link>
+                
 
-                <Link to="pedidos">
+                
                 <VStack width="full">
                 
                 <Button colorScheme='red' size='lg' width={"full"}>
-                  <HStack align="center" justify="center"><FontAwesomeIcon icon={faList} fontSize="16px"/><Text>Meus Pedidos</Text></HStack>
+                  <HStack align="center" justify="center"><FontAwesomeIcon icon={faList} fontSize="16px"/><Link to="pedidos"><Text>Meus Pedidos</Text></Link></HStack>
                    
                   </Button>
               
                 </VStack>
-                </Link>
+                
 
                 <VStack width="full">
                   <Button colorScheme='red' size='lg' width={"full"}>
