@@ -42,8 +42,9 @@ function App() {
              
           ) : (
             <>
-            <DrawerMenu/>
+            
             <BrowserRouter>
+            <DrawerMenu/>
             <Routes>
               <Route path='/' element={<Login/>}/>
               <Route path='cadastro' element={<Cadastro/>}/>

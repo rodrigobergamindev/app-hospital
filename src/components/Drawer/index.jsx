@@ -15,12 +15,12 @@ import {
     ListItem,
     VStack,
     Text,
-    Box,
-    Link
+    Box
   } from '@chakra-ui/react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars,faHome, faList, faLocationDot, faPhone} from '@fortawesome/free-solid-svg-icons'
+import {Link} from 'react-router-dom'
 
   
 
@@ -48,22 +48,25 @@ export default function DrawerMenu() {
   
             <DrawerBody>
             <VStack height={"full"} align="flex-start" marginTop={"16"} spacing="16">
+              <Link to="conta">
                 <VStack width="full">
                   <Button colorScheme='red' size='lg' width={"full"}>
-                    <HStack align="center" justify="center"><FontAwesomeIcon icon={faHome} fontSize="16px"/> <Link href="/conta" isExternal={false}><Text>Minha Conta</Text></Link></HStack>
+                    <HStack align="center" justify="center"><FontAwesomeIcon icon={faHome} fontSize="16px"/> <Text>Minha Conta</Text></HStack>
                    
                   </Button>
                 </VStack>
+                </Link>
 
+                <Link to="pedidos">
                 <VStack width="full">
                 
                 <Button colorScheme='red' size='lg' width={"full"}>
-                    <HStack align="center" justify="center"><FontAwesomeIcon icon={faList} fontSize="16px"/> <Link href="/pedidos" isExternal={false}><Text>Meus Pedidos</Text></Link></HStack>
+                  <HStack align="center" justify="center"><FontAwesomeIcon icon={faList} fontSize="16px"/><Text>Meus Pedidos</Text></HStack>
                    
                   </Button>
               
                 </VStack>
-
+                </Link>
 
                 <VStack width="full">
                   <Button colorScheme='red' size='lg' width={"full"}>
