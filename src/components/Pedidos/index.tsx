@@ -124,7 +124,7 @@ export default function Pedidos() {
         borderRadius="10px"
         zIndex={333}
         >
-      <Checkbox colorScheme='red' defaultChecked/>
+      <Checkbox colorScheme='red' />
           <Input 
             color="gray.700"
             variant="unstyled"
@@ -151,7 +151,7 @@ export default function Pedidos() {
         borderRadius="10px"
         zIndex={333}
         >
-      <Checkbox colorScheme='red' defaultChecked/>
+      <Checkbox colorScheme='red' />
           <Input 
             color="gray.700"
             variant="unstyled"
@@ -177,7 +177,7 @@ export default function Pedidos() {
         borderRadius="10px"
         zIndex={333}
         >
-      <Checkbox colorScheme='red' defaultChecked/>
+      <Checkbox colorScheme='red' />
           <Input 
             color="gray.700"
             variant="unstyled"

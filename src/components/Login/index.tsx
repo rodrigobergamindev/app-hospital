@@ -27,7 +27,7 @@ export default function Login() {
 
       <VStack width="full">
         <Button colorScheme='red' size='lg' width={"full"}>
-          Entrar
+        <Link to="conta"><Text>Entrar</Text></Link>
         </Button>
       </VStack>
 
