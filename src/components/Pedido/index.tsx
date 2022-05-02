@@ -3,12 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Logo from '../Logo'
 import { faArrowLeft, faArrowRotateBack, faBackward, faCoffee, faSearch } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 export default function Pedido() {
 
     const [pedido, setPedido] = useState(false)
 
+    let navigate = useNavigate();
+  
+    function handleClick() {
+      navigate('/')
+    }
 
   return (
     !!pedido? (
@@ -27,7 +32,7 @@ export default function Pedido() {
         </Heading>
 
         <VStack width="full"  paddingLeft="20px" paddingRight="20px" paddingBottom="30px">
-            <Button colorScheme='red' size='lg' width={"full"} onClick={() => setPedido(true)}>
+            <Button colorScheme='red' size='lg' width={"full"} onClick={handleClick}>
               Sair
             </Button>
           </VStack>
@@ -135,7 +140,7 @@ export default function Pedido() {
     
     
           <VStack width="full"  paddingLeft="20px" paddingRight="20px">
-            <Button colorScheme='red' size='lg' width={"full"}>
+            <Button colorScheme='red' size='lg' width={"full"} onClick={() => setPedido(true)}>
               Responder
             </Button>
           </VStack>
